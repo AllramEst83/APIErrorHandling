@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIErrorHandling", "APIErrorHandling\APIErrorHandling.csproj", "{8E827222-1747-4FA0-B819-17C3D4BFE459}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E827222-1747-4FA0-B819-17C3D4BFE459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E827222-1747-4FA0-B819-17C3D4BFE459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E827222-1747-4FA0-B819-17C3D4BFE459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E827222-1747-4FA0-B819-17C3D4BFE459}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5B5E723-56FE-4AE4-9179-E5C80788EBE9}
+	EndGlobalSection
+EndGlobal
