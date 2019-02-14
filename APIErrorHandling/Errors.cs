@@ -22,16 +22,16 @@ namespace APIErrorHandling
             return modelState;
         }
 
-        public static JwtErrorHandlingResponse JwtLogInErrorResponse()
+        public static JwtErrorHandlingResponse ErrorResponse(JwtErrorHandlingModel model)
         {
             JwtErrorHandlingResponse jwtErrorResonse = new JwtErrorHandlingResponse
             {
-                Auth_Token = "",
-                Code = "login_failure",
-                Id = "",
-                Description = "Invalid username or password.",
-                Expires_In = 0,
-                StatusCode = 400
+                Auth_Token = model.Auth_Token,
+                Code = model.Code,
+                Id = model.Id,
+                Description = model.Description,
+                Expires_In = model.Expires_In,
+                StatusCode = model.StatusCode
             };
 
             return jwtErrorResonse;
