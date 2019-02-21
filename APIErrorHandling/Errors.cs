@@ -37,5 +37,17 @@ namespace APIErrorHandling
             return jwtErrorResonse;
         }
 
+        public static SigUnAndRoleErrorHandlingResponse SigInErrorResponse(SigUnAndRoleErrorHandlingResponse model)
+        {
+            SigUnAndRoleErrorHandlingResponse sigInErrorResonse = new SigUnAndRoleErrorHandlingResponse
+            {
+                Error = model.Error,
+                Description = model.Description,
+                StatusCode = model.StatusCode
+            };
+
+            return sigInErrorResonse;
+        }
+
     }
 }
