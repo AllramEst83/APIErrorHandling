@@ -22,6 +22,7 @@ namespace APIErrorHandling
             return modelState;
         }
 
+
         public static JwtErrorHandlingResponse ErrorResponse(JwtErrorHandlingModel model)
         {
             JwtErrorHandlingResponse jwtErrorResonse = new JwtErrorHandlingResponse
@@ -35,6 +36,20 @@ namespace APIErrorHandling
             };
 
             return jwtErrorResonse;
+        }
+
+        public static AddUserToRoleErrorResponse AddUserToRoleErrorResponse(AddUserToRoleErrorResponse model)
+        {
+            AddUserToRoleErrorResponse AddUserTorRoleErrorResonse = new AddUserToRoleErrorResponse
+            {
+                Error = model.Error,
+                Description = model.Description,
+                StatusCode = model.StatusCode,
+                Email = model.Email,
+                Code = model.Code
+            };
+
+            return AddUserTorRoleErrorResonse;
         }
 
         public static SigUnAndRoleErrorHandlingResponse SigInErrorResponse(SigUnAndRoleErrorHandlingResponse model)
@@ -61,6 +76,22 @@ namespace APIErrorHandling
               Description = model.Description,
               Error = model.Error,
               StatusCode = model.StatusCode
+            };
+
+            return addRoleErrorResonse;
+        }
+
+        public static RemoveUserfromRoleErrorHAndelingResponse RemoveRoleFromUserErrorResponse(RemoveUserfromRoleErrorHAndelingResponse model)
+        {
+            RemoveUserfromRoleErrorHAndelingResponse addRoleErrorResonse = new RemoveUserfromRoleErrorHAndelingResponse
+            {
+                Role = model.Role,
+                Email = model.Email,
+                UserId = model.UserId,
+                Code = model.Code,
+                Description = model.Description,
+                Error = model.Error,
+                StatusCode = model.StatusCode
             };
 
             return addRoleErrorResonse;
