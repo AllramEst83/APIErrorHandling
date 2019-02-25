@@ -43,10 +43,27 @@ namespace APIErrorHandling
             {
                 Error = model.Error,
                 Description = model.Description,
-                StatusCode = model.StatusCode
+                StatusCode = model.StatusCode,
+                Email = model.Email,
+                Id = model.Id,
+                Code = model.Code
             };
 
             return sigInErrorResonse;
+        }
+
+        public static GatewayAddRoleResponse AddRoleErrorResponse(GatewayAddRoleResponse model)
+        {
+            GatewayAddRoleResponse addRoleErrorResonse = new GatewayAddRoleResponse
+            {
+              Role = model.Role,
+              Code = model.Code,
+              Description = model.Description,
+              Error = model.Error,
+              StatusCode = model.StatusCode
+            };
+
+            return addRoleErrorResonse;
         }
 
     }

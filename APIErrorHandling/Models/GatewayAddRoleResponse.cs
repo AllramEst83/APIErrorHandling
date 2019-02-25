@@ -4,10 +4,9 @@ using System.Text;
 
 namespace APIErrorHandling.Models
 {
-    public class SigUnAndRoleErrorHandlingResponse
+   public class GatewayAddRoleResponse
     {
-        public string Id { get; set; }
-        public string Email { get; set; }
+        public string Role { get; set; }
         public int StatusCode { get; set; }
         public string Error { get; set; }
         public string Description { get; set; }
