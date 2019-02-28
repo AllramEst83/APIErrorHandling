@@ -52,6 +52,37 @@ namespace APIErrorHandling
             return AddUserTorRoleErrorResonse;
         }
 
+        public static GetUserRolesErrorResponse GetUserRolesErrorResponse(GetUserRolesErrorResponse model)
+        {
+            GetUserRolesErrorResponse AddUserTorRoleErrorResonse = new GetUserRolesErrorResponse
+            {
+                Error = model.Error,
+                Description = model.Description,
+                StatusCode = model.StatusCode,
+                Code = model.Code,
+                Roles = model.Roles,
+                UserId = model.UserId,
+                Email = model.Email
+            };
+
+            return AddUserTorRoleErrorResonse;
+        }
+
+        public static DeleteRoleErrorResponse DeleteRoleErrorResponse(DeleteRoleErrorResponse model)
+        {
+            DeleteRoleErrorResponse AddUserTorRoleErrorResonse = new DeleteRoleErrorResponse
+            {
+                RoleName = model.RoleName,
+                RoleId = model.RoleId,
+                Error = model.Error,
+                Description = model.Description,
+                StatusCode = model.StatusCode,
+                Code = model.Code
+            };
+
+            return AddUserTorRoleErrorResonse;
+        }
+
         public static SigUnAndRoleErrorHandlingResponse SigInErrorResponse(SigUnAndRoleErrorHandlingResponse model)
         {
             SigUnAndRoleErrorHandlingResponse sigInErrorResonse = new SigUnAndRoleErrorHandlingResponse
