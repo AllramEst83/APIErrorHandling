@@ -4,7 +4,7 @@ using System.Text;
 
 namespace APIErrorHandling.Models
 {
-    public class SignUpAndRoleErrorHandlingResponse
+   public class DeleteUserErrorMessage
     {
         public string Id { get; set; }
         public string Email { get; set; }
