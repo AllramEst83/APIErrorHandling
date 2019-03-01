@@ -22,7 +22,6 @@ namespace APIErrorHandling
             return modelState;
         }
 
-
         public static JwtErrorHandlingResponse ErrorResponse(JwtErrorHandlingModel model)
         {
             JwtErrorHandlingResponse jwtErrorResonse = new JwtErrorHandlingResponse
@@ -113,9 +112,9 @@ namespace APIErrorHandling
             return sigInErrorResonse;
         }
 
-        public static GatewayAddRoleResponse AddRoleErrorResponse(GatewayAddRoleResponse model)
+        public static AddRoleErrorResponse AddRoleErrorResponse(AddRoleErrorResponse model)
         {
-            GatewayAddRoleResponse addRoleErrorResonse = new GatewayAddRoleResponse
+            AddRoleErrorResponse addRoleErrorResonse = new AddRoleErrorResponse
             {
               Role = model.Role,
               Code = model.Code,
@@ -135,6 +134,19 @@ namespace APIErrorHandling
                 Email = model.Email,
                 UserId = model.UserId,
                 Code = model.Code,
+                Description = model.Description,
+                Error = model.Error,
+                StatusCode = model.StatusCode
+            };
+
+            return addRoleErrorResonse;
+        }
+
+        public static GetAllRolesErrorResponse GetAllRolesErrorResponse(GetAllRolesErrorResponse model)
+        {
+            GetAllRolesErrorResponse addRoleErrorResonse = new GetAllRolesErrorResponse
+            {
+                ListOfAllRoles = model.ListOfAllRoles,
                 Description = model.Description,
                 Error = model.Error,
                 StatusCode = model.StatusCode

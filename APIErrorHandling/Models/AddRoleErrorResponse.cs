@@ -4,7 +4,7 @@ using System.Text;
 
 namespace APIErrorHandling.Models
 {
-   public class GatewayAddRoleResponse
+   public class AddRoleErrorResponse
     {
         public string Role { get; set; }
         public int StatusCode { get; set; }
