@@ -1,6 +1,7 @@
 ﻿using APIErrorHandling.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using ResponseModels.ViewModels;
 
 namespace APIErrorHandling
 {
@@ -142,14 +143,15 @@ namespace APIErrorHandling
             return addRoleErrorResonse;
         }
 
-        public static GetAllRolesErrorResponse GetAllRolesErrorResponse(GetAllRolesErrorResponse model)
+        public static GetAllRolesResponse GetAllRolesErrorResponse(GetAllRolesResponse model)
         {
-            GetAllRolesErrorResponse addRoleErrorResonse = new GetAllRolesErrorResponse
+            GetAllRolesResponse addRoleErrorResonse = new GetAllRolesResponse
             {
                 ListOfAllRoles = model.ListOfAllRoles,
                 Description = model.Description,
                 Error = model.Error,
-                StatusCode = model.StatusCode
+                StatusCode = model.StatusCode,
+                Code = model.Code
             };
 
             return addRoleErrorResonse;
