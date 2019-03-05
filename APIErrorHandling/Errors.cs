@@ -38,9 +38,9 @@ namespace APIErrorHandling
             return jwtErrorResonse;
         }
 
-        public static AddUserToRoleErrorResponse AddUserToRoleErrorResponse(AddUserToRoleErrorResponse model)
+        public static AddUserToRoleResponse AddUserToRoleErrorResponse(AddUserToRoleResponse model)
         {
-            AddUserToRoleErrorResponse AddUserTorRoleErrorResonse = new AddUserToRoleErrorResponse
+            AddUserToRoleResponse AddUserTorRoleErrorResonse = new AddUserToRoleResponse
             {
                 Error = model.Error,
                 Description = model.Description,
@@ -52,9 +52,9 @@ namespace APIErrorHandling
             return AddUserTorRoleErrorResonse;
         }
 
-        public static GetUserRolesErrorResponse GetUserRolesErrorResponse(GetUserRolesErrorResponse model)
+        public static GetUserRolesResponse GetUserRolesErrorResponse(GetUserRolesResponse model)
         {
-            GetUserRolesErrorResponse AddUserTorRoleErrorResonse = new GetUserRolesErrorResponse
+            GetUserRolesResponse AddUserTorRoleErrorResonse = new GetUserRolesResponse
             {
                 Error = model.Error,
                 Description = model.Description,
@@ -68,9 +68,9 @@ namespace APIErrorHandling
             return AddUserTorRoleErrorResonse;
         }
 
-        public static DeleteRoleErrorResponse DeleteRoleErrorResponse(DeleteRoleErrorResponse model)
+        public static DeleteRoleResponse DeleteRoleErrorResponse(DeleteRoleResponse model)
         {
-            DeleteRoleErrorResponse AddUserTorRoleErrorResonse = new DeleteRoleErrorResponse
+            DeleteRoleResponse AddUserTorRoleErrorResonse = new DeleteRoleResponse
             {
                 RoleName = model.RoleName,
                 RoleId = model.RoleId,
@@ -83,9 +83,9 @@ namespace APIErrorHandling
             return AddUserTorRoleErrorResonse;
         }
 
-        public static DeleteUserErrorMessage DeleteUserErrorResponse(DeleteUserErrorMessage model)
+        public static DeleteUserResponse DeleteUserErrorResponse(DeleteUserResponse model)
         {
-            DeleteUserErrorMessage deleteUserErrorResponse = new DeleteUserErrorMessage
+            DeleteUserResponse deleteUserErrorResponse = new DeleteUserResponse
             {
                 Id = model.Id,
                 Email = model.Email,
@@ -113,9 +113,9 @@ namespace APIErrorHandling
             return sigInErrorResonse;
         }
 
-        public static AddRoleErrorResponse AddRoleErrorResponse(AddRoleErrorResponse model)
+        public static AddRoleResponse AddRoleErrorResponse(AddRoleResponse model)
         {
-            AddRoleErrorResponse addRoleErrorResonse = new AddRoleErrorResponse
+            AddRoleResponse addRoleErrorResonse = new AddRoleResponse
             {
               Role = model.Role,
               Code = model.Code,
@@ -127,9 +127,9 @@ namespace APIErrorHandling
             return addRoleErrorResonse;
         }
 
-        public static RemoveUserfromRoleErrorHAndelingResponse RemoveRoleFromUserErrorResponse(RemoveUserfromRoleErrorHAndelingResponse model)
+        public static AddUserToRoleResponse RemoveRoleFromUserErrorResponse(AddUserToRoleResponse model)
         {
-            RemoveUserfromRoleErrorHAndelingResponse addRoleErrorResonse = new RemoveUserfromRoleErrorHAndelingResponse
+            AddUserToRoleResponse addRoleErrorResonse = new AddUserToRoleResponse
             {
                 Role = model.Role,
                 Email = model.Email,
