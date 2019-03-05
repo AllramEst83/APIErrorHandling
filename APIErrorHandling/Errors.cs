@@ -1,5 +1,4 @@
-﻿using APIErrorHandling.Models;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using ResponseModels.ViewModels;
 
@@ -23,9 +22,9 @@ namespace APIErrorHandling
             return modelState;
         }
 
-        public static JwtErrorHandlingResponse ErrorResponse(JwtErrorHandlingModel model)
+        public static JwtResponse ErrorResponse(JwtResponse model)
         {
-            JwtErrorHandlingResponse jwtErrorResonse = new JwtErrorHandlingResponse
+            JwtResponse jwtErrorResonse = new JwtResponse
             {
                 Auth_Token = model.Auth_Token,
                 Code = model.Code,
@@ -98,9 +97,9 @@ namespace APIErrorHandling
             return deleteUserErrorResponse;
         }
 
-        public static SignUpAndRoleErrorHandlingResponse SigInErrorResponse(SignUpAndRoleErrorHandlingResponse model)
+        public static SignUpResponse SigInErrorResponse(SignUpResponse model)
         {
-            SignUpAndRoleErrorHandlingResponse sigInErrorResonse = new SignUpAndRoleErrorHandlingResponse
+            SignUpResponse sigInErrorResonse = new SignUpResponse
             {
                 Error = model.Error,
                 Description = model.Description,
