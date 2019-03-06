@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using ResponseModels.ViewModels;
 using System;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace APIErrorHandling
 {
@@ -158,7 +159,7 @@ namespace APIErrorHandling
             return addRoleErrorResonse;
         }
 
-        public static T GetGenericErrorResponse<T>(T model)
+        public static async Task<T> GetGenericErrorResponse<T>(T model)
         {
             Type objectType = model.GetType();
             PropertyInfo[] objectProperties = objectType.GetProperties();
@@ -175,7 +176,7 @@ namespace APIErrorHandling
 
             Type t = typeof(T);
 
-            T objectInstance = (T)Activator.CreateInstance(t, args);
+            T objectInstance = await Task.FromResult((T)Activator.CreateInstance(t, args));
 
             return objectInstance;
         }
