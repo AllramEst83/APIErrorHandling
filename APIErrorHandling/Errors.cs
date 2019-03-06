@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using ResponseModels.ViewModels;
+using System;
+using System.Reflection;
 
 namespace APIErrorHandling
 {
@@ -116,11 +118,11 @@ namespace APIErrorHandling
         {
             AddRoleResponse addRoleErrorResonse = new AddRoleResponse
             {
-              Role = model.Role,
-              Code = model.Code,
-              Description = model.Description,
-              Error = model.Error,
-              StatusCode = model.StatusCode
+                Role = model.Role,
+                Code = model.Code,
+                Description = model.Description,
+                Error = model.Error,
+                StatusCode = model.StatusCode
             };
 
             return addRoleErrorResonse;
@@ -156,5 +158,26 @@ namespace APIErrorHandling
             return addRoleErrorResonse;
         }
 
+        public static T GetGenericErrorResponse<T>(T model)
+        {
+            Type objectType = model.GetType();
+            PropertyInfo[] objectProperties = objectType.GetProperties();
+
+            object[] args = new object[objectProperties.Length];
+
+            for (int i = 0; i < objectProperties.Length; i++)
+            {
+                string propertyName = objectProperties[i].Name;
+                PropertyInfo valueInfo = objectType.GetProperty(propertyName);
+
+                args[i] = valueInfo.GetValue(model);
+            }
+
+            Type t = typeof(T);
+
+            T objectInstance = (T)Activator.CreateInstance(t, args);
+
+            return objectInstance;
+        }
     }
 }
