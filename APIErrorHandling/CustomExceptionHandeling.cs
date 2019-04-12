@@ -8,7 +8,9 @@ namespace APIErrorHandling
 {
    public class CustomExceptionHandeling
     {
-        public async Task<T> TryCatch<R, T>(Func<Task<T>> function) where R : Exception
+        public async Task<T> TryCatch<R, T>(Func<Task<T>> function) 
+            where R : Exception
+            where T : class, new()
         {
             try
             {
@@ -19,7 +21,7 @@ namespace APIErrorHandling
                 //Skriv till logfil här
                 //https://github.com/NLog/NLog/wiki/Tutorial#best-practices-for-logging
 
-                return await Task.FromResult((T)Activator.CreateInstance(typeof(T)));
+                return await Task.FromResult(new T());
 
                 //if (ex is ArgumentNullException)
                 //{
@@ -28,7 +30,7 @@ namespace APIErrorHandling
             }
             catch (MissingMethodException ex)
             {
-                return await Task.FromResult((T)Activator.CreateInstance(typeof(T)));
+                return await Task.FromResult(new T());
             }
             //Last Exception in the order
             catch (Exception ex)
